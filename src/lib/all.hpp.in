@@ -1,0 +1,24 @@
+
+#ifndef ALL_HPP
+
+#include <cstdio>
+#include <cstdlib>
+#include <cmath>
+#include <functional>
+#include <string>
+#include <vector>
+#include <algorithm>
+#include <sstream>
+#include <time.h>
+#include <opencv2/opencv.hpp>
+#include <fmll/fmll.h>
+
+#include "exception.hpp"
+
+using namespace std;
+using namespace cv;
+
+#define DATA_DIR "${DATA_DIR}/"
+
+#endif
+

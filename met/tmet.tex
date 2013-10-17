@@ -1,0 +1,70 @@
+
+\input{various/decor}
+
+\newcounter{lr}
+\newcommand{\discipline}{}
+
+\newcommand{\ndisc}[2]
+{
+	\clearpage
+	\mysection{#1}
+	\renewcommand{\discipline}{#2}
+	\setcounter{lr}{1}
+}
+
+\newcommand{\lr}[1]
+{
+	\mysubsection{Лабораторная работа № \thelr \\ <<#1>>}
+	
+		\mysubsubsection{Цель работы}
+		\input{lab/\discipline/\thelr/aim}
+
+		\mysubsubsection{Теоретическая часть}
+		\input{lab/\discipline/\thelr/theory}
+		
+		\mysubsubsection{Задание}
+		\input{lab/\discipline/\thelr/practice}
+		
+		\clearpage
+
+	\addtocounter{lr}{1}
+}
+
+\begin{document}
+
+	\input{various/title}
+	\clearpage
+
+	\tableofcontents
+
+	\ndisc{Методы и алгоритмы обработки и анализа изображений}{image_processing}
+
+		\lr{Основы работы с программной библиотекой OpenCV}
+		\lr{Пространственная фильтрация и пороговая обработка изображений}
+		\lr{Частотная фильтрация изображений}
+		% TODO \lr{Морфологическая обработка изображений}
+		% TODO \lr{Вейвлеты}
+
+	\ndisc{Теория и методы распознавания образов}{pattern_recognition}
+
+		\lr{Классификаторы образов, обучаемые без учителя}
+		\lr{Классификаторы образов, обучаемые с учителем}
+		% TODO \lr{Обнаружение и отслеживание движения образов объектов на видеопоследовательностях}
+		% TODO \lr{Алгоритмы поиска лиц на изображениях}
+
+	\appendix
+
+		\myappendix{Дополнительное программное обеспечение}
+
+			\input{various/soft}
+
+	\clearpage
+	\addcontentsline{toc}{section}{\hskip 16pt Библиография}
+	\bibliographystyle{gost780}
+	\bibliography{various/biblio}
+
+	\clearpage
+	\input{various/stub}
+
+\end{document}
+
